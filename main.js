@@ -10,8 +10,7 @@
 // 3
 // Al click su un pulsante “Mi Piace” di un post, se abbiamo già cliccato dobbiamo decrementare il contatore e cambiare il colore del bottone.
 
-const card = document.querySelector(`.post`);
-
+let card = document.querySelector(`.post`);
 
 const posts = [
     {
@@ -81,7 +80,7 @@ posts.forEach((cardPost) =>{
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${cardPost.author.name}</div>
-                        <div class="post-meta__time">4 mesi fa</div>
+                        <div class="post-meta__time">${cardPost.created}</div>
                     </div>                    
                 </div>
             </div>
@@ -98,9 +97,19 @@ posts.forEach((cardPost) =>{
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${cardPost.likes}</b> persone
                     </div>
                 </div> 
             </div>    
     `
+
 })
+
+
+
+function reverseData(dataDaFormattare) {
+    let data = document.querySelector(`post-meta__time`).innerHTML = reverseData.reverse();
+    return dataDaFormattare;
+}
+
+reverseData(cardPost.created);
